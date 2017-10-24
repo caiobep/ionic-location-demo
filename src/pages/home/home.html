@@ -1,14 +1,35 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      TMS Location POC
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h1>Location Monitor</h1>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let location of locationHistory">
+      <span ion-item>
+        Latitude: {{location.latitude}}
+        Longitude: {{location.longitude}}
+      </span>
+    </ion-item-sliding>
+  </ion-list>
+
+  <div class="action-container">
+    <button ion-button
+      (click)="startLocationMonitoring()"
+    >
+      START MONITORING
+    </button>
+
+    <button ion-button
+      (click)="stopLocationMonitoring()"
+    >
+      STOP MONITORING
+    </button>
+  </div>
+
 </ion-content>
