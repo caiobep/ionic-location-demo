@@ -1,8 +1,7 @@
 {
-  "name": "tms-ionic-poc",
+  "name": "ionic-location-poc",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "caiobep<caicorre@gmail.com>",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -36,7 +35,7 @@
     "@ionic/app-scripts": "3.0.1",
     "typescript": "2.3.4"
   },
-  "description": "An Ionic project",
+  "description": "An Ionic demo with native location apis",
   "cordova": {
     "plugins": {
       "cordova-plugin-geolocation": {
