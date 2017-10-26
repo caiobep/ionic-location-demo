@@ -6,6 +6,8 @@ import {
   Geoposition
 } from '@ionic-native/geolocation';
 import { LocationService } from '../../providers/location.service'
+import { Device } from '@ionic-native/device';
+
 
 @Component({
   selector: 'page-home',
@@ -19,7 +21,8 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     private geolocation: Geolocation,
-    public locationService: LocationService
+    public locationService: LocationService,
+    private device: Device
   ) {
 
   }
@@ -38,7 +41,8 @@ export class HomePage {
             heading,
             speed
           } = location.coords
-          this.locationService.sendLocation({latitude, longitude, altitude})
+          const { manufacturer, model, platform, version } = this.device;
+          this.locationService.sendLocation({ latitude, longitude, altitude, manufacturer, model, platform, version })
           .subscribe(
             (success) => {
               this.locationHistory.push({latitude, longitude})
